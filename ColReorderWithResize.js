@@ -791,6 +791,7 @@ $.extend( ColReorder.prototype, {
 
 		// Destroy clean up
 		$(table).on( 'destroy.dt.colReorder', function () {
+                    if(that.s && that.s.dt) {
 			$(table).off( 'destroy.dt.colReorder draw.dt.colReorder' );
 			$(that.s.dt.nTHead).find( '*' ).off( '.ColReorder' );
 
@@ -800,6 +801,7 @@ $.extend( ColReorder.prototype, {
 
 			that.s.dt._colReorder = null;
 			that.s = null;
+                    }
 		} );	
 	},
 	
