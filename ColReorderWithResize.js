@@ -1290,11 +1290,15 @@ $.extend( ColReorder.prototype, {
 			//Save the new resized column's width
             if($(nTh).innerWidth() > nThInnerWidth) {
 			    this.s.dt.aoColumns[colResized].sWidth = $(nTh).width() + "px";
+		    if(this.s.dt.aoColumns[colResized+1]) {
 			    this.s.dt.aoColumns[colResized+1].sWidth = $(nThNext).width() + "px";
+		    }
             }
             else {
+		    if(this.s.dt.aoColumns[colResized+1]) {
 			    this.s.dt.aoColumns[colResized].sWidth = nThInnerWidth + "px";
 			    this.s.dt.aoColumns[colResized+1].sWidth = nThNextInnerWidth + "px";
+		    }
             }
 			
 			//If other columns might have changed their size, save their size too
