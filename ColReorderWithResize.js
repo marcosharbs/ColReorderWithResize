@@ -428,7 +428,7 @@ var ColReorder = function( dt, opts )
 		 *  @type     boolean
 		 *  @default  true
 		 */
-		"allowResize": true,
+		"allowResize": false,
 		
 		/**
 		 * Number of columns to fix (not allow to be reordered)
